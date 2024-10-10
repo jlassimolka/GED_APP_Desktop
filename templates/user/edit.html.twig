@@ -1,0 +1,49 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+{% if (is_granted('ROLE_ADMINISTRATEUR')) %} 
+<div class="col-xl-8">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+    
+
+    <h1>Editer un utilisateur</h1>
+
+  {{ form_start(form) }}
+    
+        {{ form_row(form.email, { 
+            label :   'email'
+        }) }}
+        <br>
+        {{ form_row(form.fullname, {
+            label: 'Prénom & Nom'
+        }) }}
+        <br>
+         {{ form_row(form.tel, {
+            label: 'téléphone'
+        }) }}
+       
+     
+    
+        <br>
+         {{ form_row(form.roles, {
+            label: 'Roles'
+        }) }}
+        <br>
+         {{ form_row(form.departements, {
+            label: 'Département'
+        }) }}
+        <br>
+         <div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Enregistrer
+						</button>
+					</div>
+    {{ form_end(form) }}
+ </div>
+ </div>
+ {% endif %}
+{% endblock %}
+     

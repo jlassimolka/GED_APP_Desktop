@@ -1,0 +1,18 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+{% if (is_granted('ROLE_ADMINISTRATEUR')) %} 
+<div class="col-xl-8">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+    
+    <h1>Editer un Processus</h1>
+
+    {{ include('processus/_form.html.twig') }}
+
+</div>
+</div>
+ {% endif %}
+{% endblock %}

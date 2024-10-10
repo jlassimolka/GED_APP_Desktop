@@ -1,0 +1,18 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+{% if (is_granted('ROLE_ADMINISTRATEUR')) %} 
+<div class="col-xl-8" style="width: 600px;">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+                     <h1>Editer une catégorie</h1>
+                     <br>
+    {{ include('categorie/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+
+   </div>
+   </div>
+    {% endif %}
+{% endblock %}
+ 

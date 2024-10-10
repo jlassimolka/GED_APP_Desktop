@@ -1,0 +1,38 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+{% if (is_granted('ROLE_ADMINISTRATEUR')) %} 
+<div class="col-xl-8">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+    <h1>Catégorie</h1>
+
+    <table class="table">
+        <tbody>
+           
+            <tr>
+                <th  class="fw-bolder">libellé catégorie</th>
+                <td>{{ categories.libcat }}</td>
+            </tr>
+            <tr>
+                <th  class="fw-bolder">Description</th>
+                <td>{{ categories.description }}</td>
+            </tr>
+            <tr>
+                <th  class="fw-bolder">Nom</th>
+                <td>{{ categories.nom }}</td>
+            </tr>
+                <th class="fw-bolder">Nom Document</th>
+                 {% for document in document |sort|reverse  %}
+                <td>{{ document.titre }} </td>
+                 {% endfor %}
+        </tbody>
+    </table>
+     <div class="container-login100-form-btn"> 
+    <a href="{{ path('app_categorie') }}" class="login100-form-btn" ><img src="{{asset('log/images/back.png')}}" style="height:20px; width:90px;"/></a>
+    </div>
+
+    {% endif %}
+{% endblock %}

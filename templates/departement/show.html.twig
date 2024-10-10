@@ -1,0 +1,55 @@
+{% extends 'home/index.html.twig' %}
+
+
+
+{% block document %}
+{% if (is_granted('ROLE_ADMINISTRATEUR')) %}
+    
+ <div class="col-xl-8">
+
+									<!--begin::Charts Widget 1-->
+									<div class="card card-xl-stretch mb-5 mb-xl-8">
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+                                          <h1>Departement</h1>
+               
+     <table class="table">
+              
+        <tbody>
+       
+           <tr>
+                 <th class="fw-bolder">Nom département</th>
+                <td>{{ departement.nom }}</td>
+            </tr>
+            <tr>
+                 <th class="fw-bolder">libellé département</th>
+              <th>{{ departement.libDep }}</td>
+            </tr>
+             <tr>
+                 <th class="fw-bolder">Date de creation</th>
+                <td>{{ departement.datecreation|date("m/d/Y") }}</td>
+            </tr>
+             <tr>
+                 <th class="fw-bolder">Description</th>
+                <td>{{ departement.description }}</td>
+            </tr>
+            
+        <th class="fw-bolder" >Liste des Utilisateurs:</th>
+           
+         {% for userDep in userDep |sort|reverse  %}
+            <tr>
+                <th></th>
+                <td>{{userDep.fullname }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="container-login100-form-btn"> 
+    <a href="{{ path('app_departement') }}" class="login100-form-btn" ><img src="{{asset('log/images/back.png')}}" style="height:20px; width:90px;"/></a>
+    </div>
+    </div>
+    </div>
+    </div>
+    {% endif %}
+
+{% endblock %}

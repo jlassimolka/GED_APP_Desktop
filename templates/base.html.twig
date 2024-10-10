@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+        {% block stylesheets %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+		
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Seven admin dashboard live demo. Check out all the features of the admin panel. Light &amp; dark skins. A large number of settings, additional services and widgets." />
+		<meta name="keywords" content="Seven, bootstrap, bootstrap 5, dmin themes, free admin themes, bootstrap admin, bootstrap dashboard" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Seven HTML Free - Bootstrap 5 HTML Multipurpose Light/Dark Admin Dashboard Theme" />
+		<meta property="og:url" content="https://keenthemes.com/products/seven-html-pro" />
+		<meta property="og:site_name" content="Keenthemes | Seven HTML Free" />
+
+            <link rel="canonical" href="Https://preview.keenthemes.com/seven-html-free" />
+		<link rel="shortcut icon" href="{{asset('assets/media/logos/favicon.ico')}}" />
+		<link rel="icon" type="image/png" href="{{asset('log/images/icons/favicon.ico')}}"/>
+		<!--begin::Fonts-->
+		<link rel="stylesheet" type="text/css" href="{{asset('log/vendor/bootstrap/css/bootstrap.min.css')}}">
+
+	    <link rel="stylesheet" type="text/css" href="{{asset('log/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+
+	    <link rel="stylesheet" type="text/css" href="{{asset('log/vendor/animate/animate.css')}}">
+
+	    <link rel="stylesheet" type="text/css" href="{{asset('log/vendor/css-hamburgers/hamburgers.min.css')}}">
+
+	    <link rel="stylesheet" type="text/css" href="{{asset('log/vendor/select2/select2.min.css')}}">
+
+     	<link rel="stylesheet" type="text/css" href="{{asset('log/css/util.css')}}">
+	    <link rel="stylesheet" type="text/css" href="{{asset('log/css/main.css')}}">
+		 <link href="{{asset('prof/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{asset('prof/css/sb-admin-2.min.css')}}" rel="stylesheet">
+
+
+
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<!--end::Fonts-->
+		<!--begin::Page Vendor Stylesheets(used by this page)-->
+		<link href="{{asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<!--end::Page Vendor Stylesheets-->
+		<!--begin::Global Stylesheets Bundle(used by all pages)-->
+		<link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<!--end::Global Stylesheets Bundle-->
+        {% endblock %}
+
+        {% block javascripts %}
+         <!--begin::Javascript-->
+		<!--begin::Global Javascript Bundle(used by all pages)-->
+		<script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
+		<script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Page Vendors Javascript(used by this page)-->
+		<script src="{{asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script>
+		<!--end::Page Vendors Javascript-->
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="{{asset('assets/js/custom/widgets.js')}}"></script>
+		<!--end::Page Custom Javascript-->
+		<!--end::Javascript-->
+		<script src="{{asset('log/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+
+	<script src="{{asset('log/vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{asset('log/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+
+	<script src="{{asset('log/vendor/select2/select2.min.js')}}"></script>
+
+	<script src="{{asset('log/vendor/tilt/tilt.jquery.min.js')}}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+	<script src="{{asset('log/js/main.js')}}"></script>
+	<script src="{{asset('prof/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('prof/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{asset('prof/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{asset('prof/js/sb-admin-2.min.js')}}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{asset('prof/vendor/chart.js/Chart.min.js')}}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{asset('prof/js/demo/chart-area-demo.js')}}"></script>
+    <script src="{{asset('prof/js/demo/chart-pie-demo.js')}}"></script>
+        {% endblock %}
+    </head>
+   
+   
+        {% block body %}{% endblock %}
+    
+    
+    </body>
+</html>

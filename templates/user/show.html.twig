@@ -1,0 +1,66 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+{% if (is_granted('ROLE_ADMINISTRATEUR')) %} 
+<div class="col-xl-8">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+    <h1>Utilisateur</h1>
+
+    
+    <table class="table">
+        <tbody>
+          
+            <tr>
+                <th class="fw-bolder">Nom utilisateur:</th>
+                <td>{{user.fullname }}</td>
+            </tr>
+             <tr>
+                <th class="fw-bolder">Email:</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Téléphone:</th>
+                <td>{{ user.tel }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">role:</th>
+                <td> 
+         <li>{{user.getRoles()[0]}}</li>
+        </td>
+            </tr>
+              
+       
+             <th class="fw-bolder" >Liste des departements:</th>
+         {% for departements in departements |sort|reverse  %}
+            <tr>
+                <th></th>
+            
+                <td >{{ departements.nom }}</td>
+            </tr>
+        {% endfor %}
+   
+          <th class="fw-bolder" >Liste des processus:</th>
+          
+         {% for processus in processus |sort|reverse  %}
+            <tr>
+                {% if processus is null %}
+          <td>aucun</td>
+         
+            {% else %}
+                <td >{{ processus.nom }}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        
+        </tbody>
+    </table>
+     <div class="container-login100-form-btn"> 
+    <a href="{{ path('app_userlist') }}" class="login100-form-btn" ><img src="{{asset('log/images/back.png')}}" style="height:20px; width:90px;"/></a>
+    </div>
+</div>
+</div>
+{% endif %}
+{% endblock %}

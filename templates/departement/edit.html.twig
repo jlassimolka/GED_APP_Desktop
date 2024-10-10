@@ -1,0 +1,44 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+{% if (is_granted('ROLE_ADMINISTRATEUR')) %} 
+<div class="col-xl-8" style="width: 600px;">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+                     <h1>Editer un département</h1>
+                     <br>
+   
+
+  {{ form_start(form) }}
+    
+        {{ form_row(form.nom, { 
+            label :   'nom'
+        }) }}
+        <br>
+        {{ form_row(form.lib_dep, {
+            label: 'lib departement'
+        }) }}
+        <br>
+         {{ form_row(form.datecreation, { 
+            label :   'date de creation'
+        }) }}
+        <br>
+        {{ form_row(form.description, {
+            label: 'description'
+        }) }}
+        <br>
+            <br>
+       
+         
+         <div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Enregistrer
+						</button>
+					</div>
+    {{ form_end(form) }}
+    </div>
+    </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+<div class="col-xl-8" style="width: 600px;">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+                     <h1>Editer un document</h1>
+                     <br>
+        
+      {{ form_start(form) }}
+          <div class="form-group">
+             {{ form_row(form.type) }}
+          </div>
+           <div class="form-group">
+             {{ form_row(form.titre) }}
+          </div>
+           <div class="form-group">
+             {{ form_row(form.version) }}
+          </div>
+           <div class="form-group">
+             {{ form_row(form.datecreation) }}
+          </div>
+           <div class="form-group">
+             {{ form_row(form.description) }}
+          </div>
+          {% if is_granted('ROLE_ADMINISTRATEUR') or is_granted('ROLE_VALIDATEUR') %}
+           <div class="form-group">
+             {{ form_row(form.validation) }}
+          </div>
+          <div class="form-group">
+             {{ form_row(form.datevalidation) }}
+          </div>
+          {% endif %}
+           {% if is_granted('ROLE_ADMINISTRATEUR') or is_granted('ROLE_APPROBATEUR') %}
+           <div class="form-group">
+             {{ form_row(form.approbation) }}
+          </div>
+          <div class="form-group">
+             {{ form_row(form.dateapprobation) }}
+          </div>
+           <div class="form-group">
+             {{ form_row(form.archivage) }}
+          </div>
+          <div class="form-group">
+             {{ form_row(form.datearchivage) }}
+          </div>
+          {% endif %}
+          <hr>
+
+
+{{ form_widget(form.file) }}
+         <div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Enregistrer
+						</button>
+					</div>
+       
+        {{ form_end(form, {'render_rest': false}) }}
+    </div> 
+    </div>
+    </div>
+{% endblock %}

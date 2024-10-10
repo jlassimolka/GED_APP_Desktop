@@ -1,0 +1,52 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+{% if (is_granted('ROLE_ADMINISTRATEUR')) %} 
+<div class="col-xl-8">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+       <h1>Processus</h1>
+          <table class="table">
+        <tbody>
+        
+
+        
+          <tr>
+                 <th class="fw-bolder">Nom de processus</th>
+                <td>{{ processus.nom }}</td>
+            </tr>
+            <tr>
+                 <th class="fw-bolder">Libellé processus</th>
+                <td>{{ processus.libprocessus }}</td>
+            </tr>
+            
+            <tr>
+                 <th class="fw-bolder">Description</th>
+                <td>{{ processus.description}}</td>
+            </tr>
+           <tr>
+                 <th class="fw-bolder">Date de creation</th>
+                <td>{{ processus.datecreation|date("m/d/Y") }}</td>
+            </tr>
+           
+          
+                   <th class="fw-bolder" >Liste des Utilisateurs:</th>
+          {% for   userProc in userProc   %}
+            <tr>
+              <th></th>
+               <td >{{userProc.fullname }}</td>
+            </tr>
+            
+              {% endfor %}
+             
+        </tbody>
+        </table>
+         <div class="container-login100-form-btn"> 
+    <a href="{{ path('app_processus') }}" class="login100-form-btn" ><img src="{{asset('log/images/back.png')}}" style="height:20px; width:90px;"/></a>
+    </div>
+    </div>
+   
+  {% endif %}
+{% endblock %}

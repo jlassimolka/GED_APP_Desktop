@@ -1,0 +1,60 @@
+
+{% extends 'home/index.html.twig' %}
+
+{% block document %}
+{% if is_granted('ROLE_ARCHIVÉ') == false %}
+<!--begin::Page title-->
+ <div class="col-xl-8">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+							<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
+								<!--begin::Heading-->
+								<h1 class="text-dark fw-bold my-0 fs-2">Profile</h1>
+								<!--end::Heading-->
+								<!--begin::Breadcrumb-->
+								
+								<!--end::Breadcrumb-->
+							</div>
+							<!--end::Page title=-->
+<div class="d-flex ms-3">
+                                {% if  app.user.image is not empty %}
+                               <img src="{{ asset('uploads/' ~ app.user.image) }}" height="140px" width="100px" >
+                                {% endif %}
+	</div>
+			
+{% if form is defined %}
+
+ {{ form_start(form) }}
+    
+        {{ form_row(form.app.user.email, { 
+            label :   'email'
+        }) }}
+        <br>
+        {{ form_row(form.app.user.fullname, {
+            label: 'Prénom & Nom'
+        }) }}
+        <br>
+         {{ form_row(form.app.user.tel, {
+            label: 'téléphone'
+        }) }}
+        <br>
+         {{ form_row(form.app.user.password, {
+            label: 'mot de passe'
+        }) }}
+        <br>
+       
+     {{ form_end(form) }}
+     {% endif %}
+     <div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Enregistrer
+						</button>
+					</div>
+   
+     </div>	  
+	     
+				 {% endif %}				
+{% endblock %}

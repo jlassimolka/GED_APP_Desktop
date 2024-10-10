@@ -1,0 +1,76 @@
+{% extends 'home/index.html.twig' %}
+{% block document %}
+<div class="col-xl-8">
+
+									<!--begin::Charts Widget 1-->
+									
+										<!--begin::Header-->
+										<div class="card-header border-0 pt-5">
+    <h1>Document</h1>
+
+    
+    
+    <table class="table">
+        <tbody>
+        
+            <tr>
+                <th class="fw-bolder">Reference</th>
+                <td>{{ document.reference }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Type</th>
+                <td>{{ document.type }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Datecreation</th>
+                <td>{{ document.datecreation ? document.datecreation|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">File</th>
+                <td>{{ document.file }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Titre</th>
+                <td>{{ document.titre }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Description</th>
+                <td>{{ document.description }}</td>
+            </tr>
+             <tr>
+                <th class="fw-bolder">createur</th>
+                <td>{{ document.createur}}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Version</th>
+                <td>{{ document.version }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Archivage</th>
+                <td>{{ document.Archivage ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Validation</th>
+                <td>{{ document.validation ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th class="fw-bolder">Approbation</th>
+                <td>{{ document.approbation ? 'Yes' : 'No' }}</td>
+            </tr>
+                  <th class="fw-bolder">Catégorie</th>
+                  {% for categorie in categorie |sort|reverse  %}
+                  
+                <td>{{ categorie.nom }} </td>
+                 {% endfor %}
+        </tbody>
+    </table>
+     <div class="container-login100-form-btn"> 
+    <a href="{{ path('app_document') }}" class="login100-form-btn" ><img src="{{asset('log/images/back.png')}}" style="height:20px; width:90px;"/></a>
+    </div>
+   
+    </div>
+    </div>
+
+   
+   
+{% endblock %}
